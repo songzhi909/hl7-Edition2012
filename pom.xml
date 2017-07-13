@@ -1,0 +1,68 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.hl7.v3</groupId>
+  <artifactId>hl7-Edition2012</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>hl7-domain</name>
+  <url>http://maven.apache.org</url>
+
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.version>1.8</java.version>
+  </properties>
+
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+          <encoding>UTF-8</encoding>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>jaxb2-maven-plugin</artifactId>
+        <version>1.6</version>
+        <executions>
+          <execution>
+            <id>xjc</id>
+            <goals>
+              <goal>xjc</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <schemaDirectory>${project.basedir}/src/main/resources/xsd/hl7/processable/multicacheschemas</schemaDirectory>
+          <!-- <schemaListFileName></schemaListFileName> -->
+           <schemaFiles>
+            PRPA_IN201311UV02.xsd, 
+            PRPA_IN201312UV02.xsd,
+            PRPA_IN201313UV02.xsd,
+            PRPA_IN201314UV02.xsd,
+            PRPA_IN201315UV02.xsd,
+            PRPA_IN201316UV02.xsd,
+            PRPA_IN201304UV02.xsd,
+            MCCI_IN000002UV01.xsd,
+            PRPA_IN201305UV02.xsd,
+            PRPA_IN201306UV02.xsd,
+            PRPA_IN201307UV02.xsd,
+            PRPA_IN201308UV02.xsd,
+            PRPA_IN201309UV02.xsd,
+            PRPA_IN201310UV02.xsd
+           </schemaFiles>
+          <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
+          <clearOutputDir>false</clearOutputDir>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+
+</project>
