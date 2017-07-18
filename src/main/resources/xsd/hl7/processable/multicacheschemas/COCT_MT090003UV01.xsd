@@ -59,7 +59,7 @@ StaticMifToXsd.xsl version 2.0</xs:documentation>
    <xs:complexType name="COCT_MT090003UV01.AssignedEntity">
       <xs:sequence>
          <xs:group ref="InfrastructureRootElements"/>
-         <xs:element name="id" type="DSET_II" minOccurs="1" maxOccurs="1"/>
+         <xs:element name="id" type="II" minOccurs="1" maxOccurs="1"/>
          <xs:element name="code" type="CD" minOccurs="0" maxOccurs="1"/>
          <xs:element name="addr" type="COLL_AD" minOccurs="0" maxOccurs="1"/>
          <xs:element name="telecom" type="COLL_TEL" minOccurs="0" maxOccurs="1"/>
@@ -108,7 +108,7 @@ StaticMifToXsd.xsl version 2.0</xs:documentation>
    <xs:complexType name="COCT_MT090003UV01.Person">
       <xs:sequence>
          <xs:group ref="InfrastructureRootElements"/>
-         <xs:element name="name" type="COLL_EN" minOccurs="1" maxOccurs="1"/>
+         <xs:element name="name" type="Person.Name" minOccurs="1" maxOccurs="1"/>
       </xs:sequence>
       <xs:attributeGroup ref="InfrastructureRootAttributes"/>
       <xs:attribute name="nullFlavor" type="NullFlavor" use="optional"/>

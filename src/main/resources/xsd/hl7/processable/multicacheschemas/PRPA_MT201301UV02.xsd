@@ -309,7 +309,7 @@ StaticMifToXsd.xsl version 2.0</xs:documentation>
    <xs:complexType name="PRPA_MT201301UV02.OtherIDs">
       <xs:sequence>
          <xs:group ref="InfrastructureRootElements"/>
-         <xs:element name="id" type="DSET_II" minOccurs="1" maxOccurs="1"/>
+         <xs:element name="id" type="II" minOccurs="1" maxOccurs="1"/>
          <xs:element name="statusCode" type="CS" minOccurs="0" maxOccurs="1"/>
          <xs:element name="effectiveTime" type="IVL_TS" minOccurs="0" maxOccurs="1"/>
          <xs:element name="scopingOrganization" type="COCT_MT150002UV01.Organization"
@@ -321,10 +321,11 @@ StaticMifToXsd.xsl version 2.0</xs:documentation>
       <xs:attribute name="nullFlavor" type="NullFlavor" use="optional"/>
       <xs:attribute name="classCode" type="RoleClassRoot" use="required"/>
    </xs:complexType>
+   
    <xs:complexType name="PRPA_MT201301UV02.Patient">
       <xs:sequence>
          <xs:group ref="InfrastructureRootElements"/>
-         <xs:element name="id" type="DSET_II" minOccurs="1" maxOccurs="1"/>
+         <xs:element name="id" type="II" minOccurs="1" maxOccurs="1"/>
          <xs:element name="addr" type="COLL_AD" minOccurs="0" maxOccurs="1"/>
          <xs:element name="telecom" type="COLL_TEL" minOccurs="0" maxOccurs="1"/>
          <xs:element name="statusCode" type="CS" minOccurs="1" maxOccurs="1"/>
@@ -364,11 +365,13 @@ StaticMifToXsd.xsl version 2.0</xs:documentation>
       <xs:attribute name="nullFlavor" type="NullFlavor" use="optional"/>
       <xs:attribute name="classCode" type="RoleClassPatient" use="required"/>
    </xs:complexType>
+   
+    
    <xs:complexType name="PRPA_MT201301UV02.Person">
       <xs:sequence>
          <xs:group ref="InfrastructureRootElements"/>
-         <xs:element name="id" type="DSET_II" minOccurs="0" maxOccurs="1"/>
-         <xs:element name="name" type="COLL_EN" minOccurs="1" maxOccurs="1"/>
+         <xs:element name="id" type="II" minOccurs="0" maxOccurs="1"/>
+         <xs:element name="name" type="Person.Name" minOccurs="1" maxOccurs="1"/>
          <xs:element name="desc" type="ED" minOccurs="0" maxOccurs="1"/>
          <xs:element name="telecom" type="COLL_TEL" minOccurs="0" maxOccurs="1"/>
          <xs:element name="administrativeGenderCode" type="CD" minOccurs="0" maxOccurs="1"/>
@@ -378,14 +381,14 @@ StaticMifToXsd.xsl version 2.0</xs:documentation>
          <xs:element name="multipleBirthInd" type="BL" minOccurs="0" maxOccurs="1"/>
          <xs:element name="multipleBirthOrderNumber" type="INT" minOccurs="0" maxOccurs="1"/>
          <xs:element name="organDonorInd" type="BL" minOccurs="0" maxOccurs="1"/>
-         <xs:element name="addr" type="COLL_AD" minOccurs="0" maxOccurs="1"/>
+         <xs:element name="addr" type="COLL_AD2" minOccurs="0" maxOccurs="1"/>
          <xs:element name="maritalStatusCode" type="CD" minOccurs="0" maxOccurs="1"/>
          <xs:element name="educationLevelCode" type="CD" minOccurs="0" maxOccurs="1"/>
          <xs:element name="disabilityCode" type="DSET_CD" minOccurs="0" maxOccurs="1"/>
          <xs:element name="livingArrangementCode" type="CD" minOccurs="0" maxOccurs="1"/>
          <xs:element name="religiousAffiliationCode" type="CD" minOccurs="0" maxOccurs="1"/>
          <xs:element name="raceCode" type="DSET_CD" minOccurs="0" maxOccurs="1"/>
-         <xs:element name="ethnicGroupCode" type="DSET_CD" minOccurs="0" maxOccurs="1"/>
+         <xs:element name="ethnicGroupCode" type="CD" minOccurs="0" maxOccurs="1"/>
          <xs:element name="asPatientOfOtherProvider" type="PRPA_MT201301UV02.PatientOfOtherProvider"
                      nillable="true"
                      minOccurs="0"

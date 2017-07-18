@@ -2,7 +2,7 @@
 // 此文件是由 JavaTM Architecture for XML Binding (JAXB) 引用实现 v2.2.7 生成的
 // 请访问 <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // 在重新编译源模式时, 对此文件的所有修改都将丢失。
-// 生成时间: 2017.07.13 时间 05:16:19 PM CST 
+// 生成时间: 2017.08.10 时间 10:45:02 AM CST 
 //
 
 
@@ -31,7 +31,6 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *   &lt;complexContent>
  *     &lt;extension base="{urn:hl7-org:v3}ANY">
  *       &lt;sequence>
- *         &lt;element name="displayName" type="{urn:hl7-org:v3}ST" minOccurs="0"/>
  *         &lt;element name="originalText" type="{urn:hl7-org:v3}ED" minOccurs="0"/>
  *         &lt;element name="translation" type="{urn:hl7-org:v3}CD" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="source" type="{urn:hl7-org:v3}XReference" minOccurs="0"/>
@@ -44,6 +43,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *       &lt;attribute name="valueSetVersion" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="codingRationale" type="{urn:hl7-org:v3}CodingRationale" />
  *       &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}ID" />
+ *       &lt;attribute name="displayName" type="{http://www.w3.org/2001/XMLSchema}string" />
  *     &lt;/extension>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -53,7 +53,6 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "CD", propOrder = {
-    "displayName",
     "originalText",
     "translation",
     "source"
@@ -65,7 +64,6 @@ public class CD
     extends ANY
 {
 
-    protected ST displayName;
     protected ED originalText;
     protected List<CD> translation;
     protected XReference source;
@@ -88,30 +86,8 @@ public class CD
     @XmlID
     @XmlSchemaType(name = "ID")
     protected String id;
-
-    /**
-     * 获取displayName属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link ST }
-     *     
-     */
-    public ST getDisplayName() {
-        return displayName;
-    }
-
-    /**
-     * 设置displayName属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ST }
-     *     
-     */
-    public void setDisplayName(ST value) {
-        this.displayName = value;
-    }
+    @XmlAttribute(name = "displayName")
+    protected String displayName;
 
     /**
      * 获取originalText属性的值。
@@ -380,6 +356,30 @@ public class CD
      */
     public void setId(String value) {
         this.id = value;
+    }
+
+    /**
+     * 获取displayName属性的值。
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getDisplayName() {
+        return displayName;
+    }
+
+    /**
+     * 设置displayName属性的值。
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setDisplayName(String value) {
+        this.displayName = value;
     }
 
 }

@@ -2,7 +2,7 @@
 // 此文件是由 JavaTM Architecture for XML Binding (JAXB) 引用实现 v2.2.7 生成的
 // 请访问 <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // 在重新编译源模式时, 对此文件的所有修改都将丢失。
-// 生成时间: 2017.07.13 时间 05:16:19 PM CST 
+// 生成时间: 2017.08.10 时间 10:45:02 AM CST 
 //
 
 
@@ -26,7 +26,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence>
  *         &lt;group ref="{urn:hl7-org:v3}InfrastructureRootElements"/>
  *         &lt;element name="code" type="{urn:hl7-org:v3}CD" minOccurs="0"/>
- *         &lt;element name="text" type="{urn:hl7-org:v3}ED" minOccurs="0"/>
+ *         &lt;element name="text" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="location" type="{urn:hl7-org:v3}DSET_ST" minOccurs="0"/>
  *       &lt;/sequence>
  *       &lt;attGroup ref="{urn:hl7-org:v3}InfrastructureRootAttributes"/>
@@ -54,7 +54,7 @@ public class MCCIMT000200UV01AcknowledgementDetail {
     protected II typeId;
     protected LISTII templateId;
     protected CD code;
-    protected ED text;
+    protected String text;
     protected DSETST location;
     @XmlAttribute(name = "nullFlavor")
     protected NullFlavor nullFlavor;
@@ -162,10 +162,10 @@ public class MCCIMT000200UV01AcknowledgementDetail {
      * 
      * @return
      *     possible object is
-     *     {@link ED }
+     *     {@link String }
      *     
      */
-    public ED getText() {
+    public String getText() {
         return text;
     }
 
@@ -174,10 +174,10 @@ public class MCCIMT000200UV01AcknowledgementDetail {
      * 
      * @param value
      *     allowed object is
-     *     {@link ED }
+     *     {@link String }
      *     
      */
-    public void setText(ED value) {
+    public void setText(String value) {
         this.text = value;
     }
 

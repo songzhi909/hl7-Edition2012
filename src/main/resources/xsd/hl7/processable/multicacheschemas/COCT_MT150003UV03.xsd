@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<xs:schema xmlns="urn:hl7-org:v3" xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           xmlns:ex="urn:hl7-org/v3-example"
-           targetNamespace="urn:hl7-org:v3"
-           elementFormDefault="qualified"><!--
+<!-- 被2013 sp1 () 使用XMLSpy v编辑的 (http://www.altova.com) by -->
+<xs:schema xmlns="urn:hl7-org:v3" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ex="urn:hl7-org/v3-example" targetNamespace="urn:hl7-org:v3" elementFormDefault="qualified">
+	<!--
 *****************************************************************************************************************
 * XML schema for message type COCT_MT150003UV03.
 * Source information:
@@ -44,8 +43,9 @@
 *  SUCH DAMAGE.
 *
 ********************************************************************************************************************
-	  --><xs:annotation>
-      <xs:documentation>Generated using schema builder version 3.4.7. Stylesheets:
+	  -->
+	<xs:annotation>
+		<xs:documentation>Generated using schema builder version 3.4.7. Stylesheets:
 Saved in XML file by RMIM Designer in Visio at 2012-07-01T08:51:11
  Flat to Serialization Transform: $Id: MIFStaticModelFlatToSerialization.xsl 8529 2011-02-09 20:49:58Z lloyd_mckenzie $
  Fix Names Transform: $Id: FixMifNames.xsl 8355 2009-10-07 03:16:34Z lloyd_mckenzie $
@@ -53,45 +53,41 @@ Saved in XML file by RMIM Designer in Visio at 2012-07-01T08:51:11
   Package Id Conversion: $Id: TransformPackageIds.xsl 8398 2010-10-12 01:52:15Z lloyd_mckenzie $
  Flat to Serialization Transform: $Id: MIFStaticModelFlatToSerialization.xsl 7375 2009-01-26 19:26:53Z wbeeler $
 StaticMifToXsd.xsl version 2.0</xs:documentation>
-   </xs:annotation>
-   <xs:include schemaLocation="../coreschemas/infrastructureRoot-r2.xsd"/>
-   <xs:complexType name="COCT_MT150003UV03.ContactParty">
-      <xs:sequence>
-         <xs:group ref="InfrastructureRootElements"/>
-         <xs:element name="id" type="DSET_II" minOccurs="0" maxOccurs="1"/>
-         <xs:element name="code" type="CD" minOccurs="0" maxOccurs="1"/>
-         <xs:element name="addr" type="COLL_AD" minOccurs="0" maxOccurs="1"/>
-         <xs:element name="telecom" type="COLL_TEL" minOccurs="0" maxOccurs="1"/>
-         <xs:element name="contactPerson" type="COCT_MT150003UV03.Person" nillable="true"
-                     minOccurs="0"
-                     maxOccurs="1"/>
-      </xs:sequence>
-      <xs:attributeGroup ref="InfrastructureRootAttributes"/>
-      <xs:attribute name="nullFlavor" type="NullFlavor" use="optional"/>
-      <xs:attribute name="classCode" type="RoleClassContact" use="required"/>
-   </xs:complexType>
-   <xs:complexType name="COCT_MT150003UV03.Organization">
-      <xs:sequence>
-         <xs:group ref="InfrastructureRootElements"/>
-         <xs:element name="id" type="DSET_II" minOccurs="1" maxOccurs="1"/>
-         <xs:element name="code" type="CD" minOccurs="0" maxOccurs="1"/>
-         <xs:element name="name" type="COLL_EN" minOccurs="0" maxOccurs="1"/>
-         <xs:element name="contactParty" type="COCT_MT150003UV03.ContactParty" nillable="true"
-                     minOccurs="1"
-                     maxOccurs="unbounded"/>
-      </xs:sequence>
-      <xs:attributeGroup ref="InfrastructureRootAttributes"/>
-      <xs:attribute name="classCode" type="EntityClassOrganization" use="required"/>
-      <xs:attribute name="determinerCode" type="EntityDeterminerSpecific" use="required"/>
-   </xs:complexType>
-   <xs:complexType name="COCT_MT150003UV03.Person">
-      <xs:sequence>
-         <xs:group ref="InfrastructureRootElements"/>
-         <xs:element name="name" type="COLL_EN" minOccurs="1" maxOccurs="1"/>
-      </xs:sequence>
-      <xs:attributeGroup ref="InfrastructureRootAttributes"/>
-      <xs:attribute name="nullFlavor" type="NullFlavor" use="optional"/>
-      <xs:attribute name="classCode" type="EntityClassPerson" use="required"/>
-      <xs:attribute name="determinerCode" type="EntityDeterminerSpecific" use="required"/>
-   </xs:complexType>
+	</xs:annotation>
+	<xs:include schemaLocation="../coreschemas/infrastructureRoot-r2.xsd"/>
+	<xs:complexType name="COCT_MT150003UV03.ContactParty">
+		<xs:sequence>
+			<xs:group ref="InfrastructureRootElements"/>
+			<xs:element name="id" type="DSET_II" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="code" type="CD" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="addr" type="COLL_AD" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="telecom" type="COLL_TEL" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="contactPerson" type="COCT_MT150003UV03.Person" nillable="true" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="InfrastructureRootAttributes"/>
+		<xs:attribute name="nullFlavor" type="NullFlavor" use="optional"/>
+		<xs:attribute name="classCode" type="RoleClassContact" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="COCT_MT150003UV03.Organization">
+		<xs:sequence>
+			<xs:group ref="InfrastructureRootElements"/>
+			<xs:element name="id" type="II" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="code" type="CD" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="name" type="Person.Name" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="contactParty" type="COCT_MT150003UV03.ContactParty" nillable="true" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="InfrastructureRootAttributes"/>
+		<xs:attribute name="classCode" type="EntityClassOrganization" use="required"/>
+		<xs:attribute name="determinerCode" type="EntityDeterminerSpecific" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="COCT_MT150003UV03.Person">
+		<xs:sequence>
+			<xs:group ref="InfrastructureRootElements"/>
+			<xs:element name="name" type="Person.Name" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="InfrastructureRootAttributes"/>
+		<xs:attribute name="nullFlavor" type="NullFlavor" use="optional"/>
+		<xs:attribute name="classCode" type="EntityClassPerson" use="required"/>
+		<xs:attribute name="determinerCode" type="EntityDeterminerSpecific" use="required"/>
+	</xs:complexType>
 </xs:schema>

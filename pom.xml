@@ -40,8 +40,8 @@
         </executions>
         <configuration>
           <schemaDirectory>${project.basedir}/src/main/resources/xsd/hl7/processable/multicacheschemas</schemaDirectory>
-          <!-- <schemaListFileName></schemaListFileName> -->
            <schemaFiles>
+            <!-- 患者信息 -->
             PRPA_IN201311UV02.xsd, 
             PRPA_IN201312UV02.xsd,
             PRPA_IN201313UV02.xsd,
@@ -55,7 +55,24 @@
             PRPA_IN201307UV02.xsd,
             PRPA_IN201308UV02.xsd,
             PRPA_IN201309UV02.xsd,
-            PRPA_IN201310UV02.xsd
+            PRPA_IN201310UV02.xsd,
+            <!-- 机构信息 -->
+            PRPM_IN401030UV01.xsd,
+            PRPM_IN401031UV01.xsd,
+            PRPM_IN403010UV01.xsd,
+            PRPM_IN403011UV01.xsd,
+            PRPM_IN406010UV01.xsd,
+            PRPM_IN406110UV01.xsd,
+            <!-- 卫生人员信息 -->
+            PRPM_IN301010UV01.xsd,
+            PRPM_IN301011UV01.xsd,
+            PRPM_IN303010UV01.xsd,
+            PRPM_IN303011UV01.xsd,
+            PRPM_IN306010UV01.xsd,
+            PRPM_IN306011UV01.xsd,
+            PRPM_IN306050UV01.xsd,
+            PRPM_IN306051UV01.xsd
+            
            </schemaFiles>
           <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
           <clearOutputDir>false</clearOutputDir>

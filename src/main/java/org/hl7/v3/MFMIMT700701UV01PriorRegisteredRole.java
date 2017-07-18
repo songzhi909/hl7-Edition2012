@@ -2,7 +2,7 @@
 // 此文件是由 JavaTM Architecture for XML Binding (JAXB) 引用实现 v2.2.7 生成的
 // 请访问 <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // 在重新编译源模式时, 对此文件的所有修改都将丢失。
-// 生成时间: 2017.07.13 时间 05:16:19 PM CST 
+// 生成时间: 2017.08.10 时间 10:45:02 AM CST 
 //
 
 
@@ -26,7 +26,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;group ref="{urn:hl7-org:v3}InfrastructureRootElements"/>
- *         &lt;element name="id" type="{urn:hl7-org:v3}DSET_II"/>
+ *         &lt;element name="id" type="{urn:hl7-org:v3}II"/>
  *       &lt;/sequence>
  *       &lt;attGroup ref="{urn:hl7-org:v3}InfrastructureRootAttributes"/>
  *       &lt;attribute name="nullFlavor" type="{urn:hl7-org:v3}NullFlavor" />
@@ -51,7 +51,7 @@ public class MFMIMT700701UV01PriorRegisteredRole {
     protected II typeId;
     protected LISTII templateId;
     @XmlElement(required = true)
-    protected DSETII id;
+    protected II id;
     @XmlAttribute(name = "nullFlavor")
     protected NullFlavor nullFlavor;
     @XmlAttribute(name = "classCode", required = true)
@@ -134,10 +134,10 @@ public class MFMIMT700701UV01PriorRegisteredRole {
      * 
      * @return
      *     possible object is
-     *     {@link DSETII }
+     *     {@link II }
      *     
      */
-    public DSETII getId() {
+    public II getId() {
         return id;
     }
 
@@ -146,10 +146,10 @@ public class MFMIMT700701UV01PriorRegisteredRole {
      * 
      * @param value
      *     allowed object is
-     *     {@link DSETII }
+     *     {@link II }
      *     
      */
-    public void setId(DSETII value) {
+    public void setId(II value) {
         this.id = value;
     }
 

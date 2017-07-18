@@ -2,7 +2,7 @@
 // 此文件是由 JavaTM Architecture for XML Binding (JAXB) 引用实现 v2.2.7 生成的
 // 请访问 <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // 在重新编译源模式时, 对此文件的所有修改都将丢失。
-// 生成时间: 2017.07.13 时间 05:16:19 PM CST 
+// 生成时间: 2017.08.10 时间 10:45:02 AM CST 
 //
 
 
@@ -26,8 +26,8 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;group ref="{urn:hl7-org:v3}InfrastructureRootElements"/>
- *         &lt;element name="value" type="{urn:hl7-org:v3}DSET_II"/>
- *         &lt;element name="semanticsText" type="{urn:hl7-org:v3}ST"/>
+ *         &lt;element name="value" type="{urn:hl7-org:v3}II"/>
+ *         &lt;element name="semanticsText" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *       &lt;attGroup ref="{urn:hl7-org:v3}InfrastructureRootAttributes"/>
  *       &lt;attribute name="nullFlavor" type="{urn:hl7-org:v3}NullFlavor" />
@@ -52,9 +52,9 @@ public class PRPAMT201306UV02LivingSubjectId {
     protected II typeId;
     protected LISTII templateId;
     @XmlElement(required = true)
-    protected DSETII value;
+    protected II value;
     @XmlElement(required = true)
-    protected ST semanticsText;
+    protected String semanticsText;
     @XmlAttribute(name = "nullFlavor")
     protected NullFlavor nullFlavor;
 
@@ -135,10 +135,10 @@ public class PRPAMT201306UV02LivingSubjectId {
      * 
      * @return
      *     possible object is
-     *     {@link DSETII }
+     *     {@link II }
      *     
      */
-    public DSETII getValue() {
+    public II getValue() {
         return value;
     }
 
@@ -147,10 +147,10 @@ public class PRPAMT201306UV02LivingSubjectId {
      * 
      * @param value
      *     allowed object is
-     *     {@link DSETII }
+     *     {@link II }
      *     
      */
-    public void setValue(DSETII value) {
+    public void setValue(II value) {
         this.value = value;
     }
 
@@ -159,10 +159,10 @@ public class PRPAMT201306UV02LivingSubjectId {
      * 
      * @return
      *     possible object is
-     *     {@link ST }
+     *     {@link String }
      *     
      */
-    public ST getSemanticsText() {
+    public String getSemanticsText() {
         return semanticsText;
     }
 
@@ -171,10 +171,10 @@ public class PRPAMT201306UV02LivingSubjectId {
      * 
      * @param value
      *     allowed object is
-     *     {@link ST }
+     *     {@link String }
      *     
      */
-    public void setSemanticsText(ST value) {
+    public void setSemanticsText(String value) {
         this.semanticsText = value;
     }
 

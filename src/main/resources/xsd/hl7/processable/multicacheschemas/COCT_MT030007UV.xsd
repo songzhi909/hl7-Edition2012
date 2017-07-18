@@ -267,7 +267,7 @@ StaticMifToXsd.xsl version 2.0</xs:documentation>
       <xs:sequence>
          <xs:group ref="InfrastructureRootElements"/>
          <xs:element name="id" type="DSET_II" minOccurs="0" maxOccurs="1"/>
-         <xs:element name="name" type="COLL_EN" minOccurs="0" maxOccurs="1"/>
+         <xs:element name="name" type="xs:string" minOccurs="0" maxOccurs="1"/>
          <xs:element name="desc" type="ED" minOccurs="0" maxOccurs="1"/>
          <xs:element name="statusCode" type="CS" minOccurs="0" maxOccurs="1"/>
          <xs:element name="administrativeGenderCode" type="CD" minOccurs="0" maxOccurs="1"/>

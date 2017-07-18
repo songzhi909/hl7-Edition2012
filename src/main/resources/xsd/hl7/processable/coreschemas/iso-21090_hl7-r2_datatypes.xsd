@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- 被2013 sp1 () 使用XMLSpy v编辑的 (http://www.altova.com) by -->
 <xsd:schema xmlns:sch="http://www.ascc.net/xml/schematron" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
 	<xsd:annotation>
 		<xsd:documentation>
@@ -670,7 +671,7 @@
 		<xsd:complexContent>
 			<xsd:extension base="ANY">
 				<xsd:sequence>
-					<xsd:element name="displayName" type="ST" minOccurs="0"/>
+					<!-- <xsd:element name="displayName" type="ST" minOccurs="0"/> -->
 					<xsd:element name="originalText" type="ED" minOccurs="0"/>
 					<xsd:element name="translation" type="CD" minOccurs="0" maxOccurs="unbounded"/>
 					<xsd:element name="source" type="XReference" minOccurs="0"/>
@@ -683,6 +684,7 @@
 				<xsd:attribute name="valueSetVersion" type="xsd:string" use="optional"/>
 				<xsd:attribute name="codingRationale" type="CodingRationale" use="optional"/>
 				<xsd:attribute name="id" type="xsd:ID" use="optional"/>
+				<xsd:attribute name="displayName" type="xsd:string" use="optional"/>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
@@ -920,7 +922,7 @@
 		<xsd:attribute name="codeSystemVersion" type="xsd:string" use="optional"/>
 		<xsd:attribute name="language" type="Code" use="optional"/>
 	</xsd:complexType>
-	<xsd:complexType name="EN">
+	<xsd:complexType name="EN" mixed="true">
 		<xsd:annotation>
 			<xsd:appinfo>
 				<sch:pattern name="null or parts">
@@ -1191,7 +1193,7 @@
 				</sch:pattern>
 			</xsd:appinfo>
 		</xsd:annotation>
-		<xsd:complexContent mixed="true">
+		<xsd:complexContent>
 			<xsd:extension base="ANY">
 				<xsd:sequence>
 					<xsd:choice minOccurs="0" maxOccurs="unbounded">
@@ -1363,7 +1365,7 @@
 		<xsd:list itemType="xsd:IDREF"/>
 	</xsd:simpleType>
 	<xsd:complexType name="StrucDoc.Paragraph" mixed="true">
-		<xsd:complexContent mixed="true">
+		<xsd:complexContent>
 			<xsd:extension base="StrucDoc.Captioned">
 				<xsd:sequence>
 					<xsd:choice minOccurs="0" maxOccurs="unbounded">
@@ -1387,7 +1389,7 @@
 		<xsd:attributeGroup ref="StrucDoc.Base"/>
 	</xsd:complexType>
 	<xsd:complexType name="StrucDoc.List" mixed="true">
-		<xsd:complexContent mixed="true">
+		<xsd:complexContent>
 			<xsd:extension base="StrucDoc.Captioned">
 				<xsd:sequence>
 					<xsd:element name="item" type="StrucDoc.Item" minOccurs="0" maxOccurs="unbounded"/>
@@ -1397,7 +1399,7 @@
 		</xsd:complexContent>
 	</xsd:complexType>
 	<xsd:complexType name="StrucDoc.Item" mixed="true">
-		<xsd:complexContent mixed="true">
+		<xsd:complexContent>
 			<xsd:extension base="StrucDoc.Captioned">
 				<xsd:sequence>
 					<xsd:choice minOccurs="0" maxOccurs="unbounded">
@@ -1427,7 +1429,7 @@
 				</sch:pattern>
 			</xsd:appinfo>
 		</xsd:annotation>
-		<xsd:complexContent mixed="true">
+		<xsd:complexContent>
 			<xsd:extension base="StrucDoc.Captioned">
 				<xsd:sequence>
 					<xsd:element name="col" type="StrucDoc.Col" minOccurs="0" maxOccurs="unbounded"/>
@@ -1518,7 +1520,7 @@
 				</sch:pattern>
 			</xsd:appinfo>
 		</xsd:annotation>
-		<xsd:complexContent mixed="true">
+		<xsd:complexContent>
 			<xsd:extension base="StrucDoc.TableItem">
 				<xsd:sequence>
 					<xsd:choice minOccurs="0" maxOccurs="unbounded">
@@ -1559,7 +1561,7 @@
 				</sch:pattern>
 			</xsd:appinfo>
 		</xsd:annotation>
-		<xsd:complexContent mixed="true">
+		<xsd:complexContent>
 			<xsd:extension base="ANY">
 				<xsd:sequence>
 					<xsd:choice minOccurs="0" maxOccurs="unbounded">
@@ -1669,9 +1671,9 @@
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
-	<xsd:complexType name="COLL_TEL" abstract="true">
+	<xsd:complexType name="COLL_TEL">
 		<xsd:complexContent>
-			<xsd:extension base="ANY"/>
+			<xsd:extension base="TEL"/>
 		</xsd:complexContent>
 	</xsd:complexType>
 	<xsd:complexType name="DSET_II">
@@ -1739,6 +1741,35 @@
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
+	<xsd:complexType name="COLL_AD2">
+		<xsd:sequence>
+			<xsd:element name="streetAddressLine" minOccurs="0" maxOccurs="1">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="partType" type="xsd:string"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="state" minOccurs="0" maxOccurs="1">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="language" type="xsd:string"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="city" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="county" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="streetNameBase" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="streetName" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="houseNumber" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="postalCode" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+		<xsd:attribute name="use" type="xsd:string" />
+	</xsd:complexType>
 	<xsd:complexType name="COLL_AD" abstract="true">
 		<xsd:complexContent>
 			<xsd:extension base="ANY"/>
@@ -1752,6 +1783,13 @@
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="Person.Name">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="use" type="xsd:string"/>
+			</xsd:extension>
+		</xsd:simpleContent>
 	</xsd:complexType>
 	<xsd:complexType name="COLL_EN" abstract="true">
 		<xsd:complexContent>
@@ -2447,6 +2485,7 @@
 				</xsd:sequence>
 				<xsd:attribute name="lowClosed" type="xsd:boolean" use="optional"/>
 				<xsd:attribute name="highClosed" type="xsd:boolean" use="optional"/>
+				<xsd:attribute name="value" type="xsd:string" use="optional"/>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>

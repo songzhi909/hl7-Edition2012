@@ -2,7 +2,7 @@
 // 此文件是由 JavaTM Architecture for XML Binding (JAXB) 引用实现 v2.2.7 生成的
 // 请访问 <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // 在重新编译源模式时, 对此文件的所有修改都将丢失。
-// 生成时间: 2017.07.13 时间 05:16:19 PM CST 
+// 生成时间: 2017.08.10 时间 10:45:02 AM CST 
 //
 
 
@@ -60,13 +60,13 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 public class StrucDocTitleFootnote {
 
     @XmlElementRefs({
-        @XmlElementRef(name = "sub", namespace = "urn:hl7-org:v3", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "sup", namespace = "urn:hl7-org:v3", type = JAXBElement.class, required = false),
         @XmlElementRef(name = "footnote", namespace = "urn:hl7-org:v3", type = JAXBElement.class, required = false),
         @XmlElementRef(name = "br", namespace = "urn:hl7-org:v3", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "content", namespace = "urn:hl7-org:v3", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "sub", namespace = "urn:hl7-org:v3", type = JAXBElement.class, required = false),
         @XmlElementRef(name = "footnoteRef", namespace = "urn:hl7-org:v3", type = JAXBElement.class, required = false),
-        @XmlElementRef(name = "linkHtml", namespace = "urn:hl7-org:v3", type = JAXBElement.class, required = false)
+        @XmlElementRef(name = "linkHtml", namespace = "urn:hl7-org:v3", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "content", namespace = "urn:hl7-org:v3", type = JAXBElement.class, required = false),
+        @XmlElementRef(name = "sup", namespace = "urn:hl7-org:v3", type = JAXBElement.class, required = false)
     })
     @XmlMixed
     protected List<Serializable> content;
@@ -98,14 +98,14 @@ public class StrucDocTitleFootnote {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link JAXBElement }{@code <}{@link StrucDocSub }{@code >}
-     * {@link JAXBElement }{@code <}{@link StrucDocSup }{@code >}
      * {@link JAXBElement }{@code <}{@link StrucDocTitleFootnote }{@code >}
      * {@link JAXBElement }{@code <}{@link StrucDocBr }{@code >}
-     * {@link JAXBElement }{@code <}{@link StrucDocCMTitle }{@code >}
-     * {@link String }
+     * {@link JAXBElement }{@code <}{@link StrucDocSub }{@code >}
      * {@link JAXBElement }{@code <}{@link StrucDocFootnoteRef }{@code >}
+     * {@link String }
      * {@link JAXBElement }{@code <}{@link StrucDocLinkHtml }{@code >}
+     * {@link JAXBElement }{@code <}{@link StrucDocCMTitle }{@code >}
+     * {@link JAXBElement }{@code <}{@link StrucDocSup }{@code >}
      * 
      * 
      */

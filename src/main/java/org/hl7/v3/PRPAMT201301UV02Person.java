@@ -2,7 +2,7 @@
 // 此文件是由 JavaTM Architecture for XML Binding (JAXB) 引用实现 v2.2.7 生成的
 // 请访问 <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // 在重新编译源模式时, 对此文件的所有修改都将丢失。
-// 生成时间: 2017.07.13 时间 05:16:19 PM CST 
+// 生成时间: 2017.08.10 时间 10:45:02 AM CST 
 //
 
 
@@ -30,8 +30,8 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;group ref="{urn:hl7-org:v3}InfrastructureRootElements"/>
- *         &lt;element name="id" type="{urn:hl7-org:v3}DSET_II" minOccurs="0"/>
- *         &lt;element name="name" type="{urn:hl7-org:v3}COLL_EN"/>
+ *         &lt;element name="id" type="{urn:hl7-org:v3}II" minOccurs="0"/>
+ *         &lt;element name="name" type="{urn:hl7-org:v3}Person.Name"/>
  *         &lt;element name="desc" type="{urn:hl7-org:v3}ED" minOccurs="0"/>
  *         &lt;element name="telecom" type="{urn:hl7-org:v3}COLL_TEL" minOccurs="0"/>
  *         &lt;element name="administrativeGenderCode" type="{urn:hl7-org:v3}CD" minOccurs="0"/>
@@ -41,14 +41,14 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="multipleBirthInd" type="{urn:hl7-org:v3}BL" minOccurs="0"/>
  *         &lt;element name="multipleBirthOrderNumber" type="{urn:hl7-org:v3}INT" minOccurs="0"/>
  *         &lt;element name="organDonorInd" type="{urn:hl7-org:v3}BL" minOccurs="0"/>
- *         &lt;element name="addr" type="{urn:hl7-org:v3}COLL_AD" minOccurs="0"/>
+ *         &lt;element name="addr" type="{urn:hl7-org:v3}COLL_AD2" minOccurs="0"/>
  *         &lt;element name="maritalStatusCode" type="{urn:hl7-org:v3}CD" minOccurs="0"/>
  *         &lt;element name="educationLevelCode" type="{urn:hl7-org:v3}CD" minOccurs="0"/>
  *         &lt;element name="disabilityCode" type="{urn:hl7-org:v3}DSET_CD" minOccurs="0"/>
  *         &lt;element name="livingArrangementCode" type="{urn:hl7-org:v3}CD" minOccurs="0"/>
  *         &lt;element name="religiousAffiliationCode" type="{urn:hl7-org:v3}CD" minOccurs="0"/>
  *         &lt;element name="raceCode" type="{urn:hl7-org:v3}DSET_CD" minOccurs="0"/>
- *         &lt;element name="ethnicGroupCode" type="{urn:hl7-org:v3}DSET_CD" minOccurs="0"/>
+ *         &lt;element name="ethnicGroupCode" type="{urn:hl7-org:v3}CD" minOccurs="0"/>
  *         &lt;element name="asPatientOfOtherProvider" type="{urn:hl7-org:v3}PRPA_MT201301UV02.PatientOfOtherProvider" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="asEmployee" type="{urn:hl7-org:v3}PRPA_MT201301UV02.Employee" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="asCitizen" type="{urn:hl7-org:v3}PRPA_MT201301UV02.Citizen" maxOccurs="unbounded" minOccurs="0"/>
@@ -117,9 +117,9 @@ public class PRPAMT201301UV02Person {
     protected DSETCS realmCode;
     protected II typeId;
     protected LISTII templateId;
-    protected DSETII id;
+    protected II id;
     @XmlElement(required = true)
-    protected COLLEN name;
+    protected PersonName name;
     protected ED desc;
     protected COLLTEL telecom;
     protected CD administrativeGenderCode;
@@ -129,14 +129,14 @@ public class PRPAMT201301UV02Person {
     protected BL multipleBirthInd;
     protected INT multipleBirthOrderNumber;
     protected BL organDonorInd;
-    protected COLLAD addr;
+    protected COLLAD2 addr;
     protected CD maritalStatusCode;
     protected CD educationLevelCode;
     protected DSETCD disabilityCode;
     protected CD livingArrangementCode;
     protected CD religiousAffiliationCode;
     protected DSETCD raceCode;
-    protected DSETCD ethnicGroupCode;
+    protected CD ethnicGroupCode;
     @XmlElement(nillable = true)
     protected List<PRPAMT201301UV02PatientOfOtherProvider> asPatientOfOtherProvider;
     @XmlElement(nillable = true)
@@ -247,10 +247,10 @@ public class PRPAMT201301UV02Person {
      * 
      * @return
      *     possible object is
-     *     {@link DSETII }
+     *     {@link II }
      *     
      */
-    public DSETII getId() {
+    public II getId() {
         return id;
     }
 
@@ -259,10 +259,10 @@ public class PRPAMT201301UV02Person {
      * 
      * @param value
      *     allowed object is
-     *     {@link DSETII }
+     *     {@link II }
      *     
      */
-    public void setId(DSETII value) {
+    public void setId(II value) {
         this.id = value;
     }
 
@@ -271,10 +271,10 @@ public class PRPAMT201301UV02Person {
      * 
      * @return
      *     possible object is
-     *     {@link COLLEN }
+     *     {@link PersonName }
      *     
      */
-    public COLLEN getName() {
+    public PersonName getName() {
         return name;
     }
 
@@ -283,10 +283,10 @@ public class PRPAMT201301UV02Person {
      * 
      * @param value
      *     allowed object is
-     *     {@link COLLEN }
+     *     {@link PersonName }
      *     
      */
-    public void setName(COLLEN value) {
+    public void setName(PersonName value) {
         this.name = value;
     }
 
@@ -511,10 +511,10 @@ public class PRPAMT201301UV02Person {
      * 
      * @return
      *     possible object is
-     *     {@link COLLAD }
+     *     {@link COLLAD2 }
      *     
      */
-    public COLLAD getAddr() {
+    public COLLAD2 getAddr() {
         return addr;
     }
 
@@ -523,10 +523,10 @@ public class PRPAMT201301UV02Person {
      * 
      * @param value
      *     allowed object is
-     *     {@link COLLAD }
+     *     {@link COLLAD2 }
      *     
      */
-    public void setAddr(COLLAD value) {
+    public void setAddr(COLLAD2 value) {
         this.addr = value;
     }
 
@@ -679,10 +679,10 @@ public class PRPAMT201301UV02Person {
      * 
      * @return
      *     possible object is
-     *     {@link DSETCD }
+     *     {@link CD }
      *     
      */
-    public DSETCD getEthnicGroupCode() {
+    public CD getEthnicGroupCode() {
         return ethnicGroupCode;
     }
 
@@ -691,10 +691,10 @@ public class PRPAMT201301UV02Person {
      * 
      * @param value
      *     allowed object is
-     *     {@link DSETCD }
+     *     {@link CD }
      *     
      */
-    public void setEthnicGroupCode(DSETCD value) {
+    public void setEthnicGroupCode(CD value) {
         this.ethnicGroupCode = value;
     }
 

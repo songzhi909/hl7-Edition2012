@@ -2,7 +2,7 @@
 // 此文件是由 JavaTM Architecture for XML Binding (JAXB) 引用实现 v2.2.7 生成的
 // 请访问 <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // 在重新编译源模式时, 对此文件的所有修改都将丢失。
-// 生成时间: 2017.07.13 时间 05:16:19 PM CST 
+// 生成时间: 2017.08.10 时间 10:45:02 AM CST 
 //
 
 
@@ -29,7 +29,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence>
  *         &lt;group ref="{urn:hl7-org:v3}InfrastructureRootElements"/>
  *         &lt;element name="id" type="{urn:hl7-org:v3}DSET_II" minOccurs="0"/>
- *         &lt;element name="name" type="{urn:hl7-org:v3}COLL_EN"/>
+ *         &lt;element name="name" type="{urn:hl7-org:v3}Person.Name"/>
  *         &lt;element name="asPatientOfOtherProvider" type="{urn:hl7-org:v3}PRPA_MT201304UV02.PatientOfOtherProvider" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="asEmployee" type="{urn:hl7-org:v3}PRPA_MT201304UV02.Employee" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="asCitizen" type="{urn:hl7-org:v3}PRPA_MT201304UV02.Citizen" maxOccurs="unbounded" minOccurs="0"/>
@@ -69,7 +69,7 @@ public class PRPAMT201304UV02Person {
     protected LISTII templateId;
     protected DSETII id;
     @XmlElement(required = true)
-    protected COLLEN name;
+    protected PersonName name;
     @XmlElement(nillable = true)
     protected List<PRPAMT201304UV02PatientOfOtherProvider> asPatientOfOtherProvider;
     @XmlElement(nillable = true)
@@ -190,10 +190,10 @@ public class PRPAMT201304UV02Person {
      * 
      * @return
      *     possible object is
-     *     {@link COLLEN }
+     *     {@link PersonName }
      *     
      */
-    public COLLEN getName() {
+    public PersonName getName() {
         return name;
     }
 
@@ -202,10 +202,10 @@ public class PRPAMT201304UV02Person {
      * 
      * @param value
      *     allowed object is
-     *     {@link COLLEN }
+     *     {@link PersonName }
      *     
      */
-    public void setName(COLLEN value) {
+    public void setName(PersonName value) {
         this.name = value;
     }
 
